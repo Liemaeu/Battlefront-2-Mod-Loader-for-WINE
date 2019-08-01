@@ -41,7 +41,7 @@ def create():
     for i in range(len(Mods)):
         tkinter.Label(text = Mods[i]).grid(row=i, sticky="nsew", column=0)
         os.chdir(Directory + str(Mods[i]))
-        if os.path.isfile('addme.script') is True:
+        if os.path.isfile('addme.script') is True: #Checks if the mod is active or not
             tkinter.Button(text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=1)
         else:
             tkinter.Button(text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=1)
