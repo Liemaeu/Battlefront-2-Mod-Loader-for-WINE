@@ -39,13 +39,12 @@ def Disable(i):
 #Function to create the window
 def create():   
     for i in range(len(Mods)):
+        tkinter.Label(text = Mods[i]).grid(row=i, sticky="nsew", column=0)
         os.chdir(Directory + str(Mods[i]))
-        if os.path.isfile('addme.script') is True: #Checks if the mod is active or not
-            tkinter.Label(text = Mods[i], fg="green").grid(row=i, sticky="nsew", column=0)
-            tkinter.Button(text = "Disable", command = lambda a=i:Disable(a)).grid(row=i, sticky="nsew", column=1)
+        if os.path.isfile('addme.script') is True:
+            tkinter.Button(text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=1)
         else:
-            tkinter.Label(text = Mods[i], fg="red").grid(row=i, sticky="nsew", column=0)
-            tkinter.Button(text = "Enable", command = lambda a=i:Enable(a)).grid(row=i, sticky="nsew", column=1)
+            tkinter.Button(text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=1)
 
 #Creates the window
 create()
