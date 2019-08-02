@@ -32,3 +32,5 @@ green = mod is enabled
 red = mod is disabled
 
 To add more mod names edit the 2 dimensional arrey ModList in the SWBF2ModLoader.py script. The syntax is: ["name of folder", "name of mod"], e.g. ["BFX", "Battlefront Extreme"].
+
+You can report new mods by making an issue here on GitHub or by sending me a email: liemaeu@gmail.com. Thank you very much for making this mod loader better!
