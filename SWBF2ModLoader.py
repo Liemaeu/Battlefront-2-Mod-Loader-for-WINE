@@ -33,7 +33,7 @@ def getName(i):
     for a in range(len(ModList)):
         if Mods[i] == ModList[a][0]:
             return ModList[a][1]
-    return Mods[i] #otherwise it uses the name of the folder
+    return "Unknown"
 
 #Function to enable a mod
 def Enable(i):
