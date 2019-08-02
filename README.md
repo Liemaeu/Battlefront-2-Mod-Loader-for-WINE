@@ -1,7 +1,9 @@
 # Battlefront-2-Mod-Loader-for-WINE
-An unofficial mod loader for Star Wars: Battlefront II that run native on GNU/Linux, macOS and BSD (with Python)
+An unofficial mod loader for Star Wars: Battlefront II that run native on GNU/Linux, macOS and BSD (with Python).
 
-![alt text](https://raw.githubusercontent.com/Liemaeu/Battlefront-2-Mod-Loader-for-WINE/master/Screenshot1.png)
+It automaticly recognizes the name of the mod by its folder name.
+
+![alt text]()
 
 What this mod loader does:
 
@@ -28,3 +30,5 @@ Alternativly you can change the value of the DefaultDirectory variable in the SW
 green = mod is enabled
 
 red = mod is disabled
+
+To add more mod names edit the 2 dimensional arrey ModList in the SWBF2ModLoader.py script. The syntax is: ["name of folder", "name of mod"], e.g. ["BFX", "Battlefront Extreme"].
