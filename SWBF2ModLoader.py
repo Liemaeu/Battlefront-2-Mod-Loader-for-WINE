@@ -5,7 +5,7 @@ import sys
 #Set default directory
 DefaultDirectory = None
 
-
+#List of the mod names
 ModList = (["BFX", "Battlefront Extreme"], ["TCW", "The Clone Wars"], ["ZZZ", "AI Hero Support"], ["AAA-v1.3patch", "1.3 Patch"], ["RE1", "Realistic Geonosis"])
 
 
