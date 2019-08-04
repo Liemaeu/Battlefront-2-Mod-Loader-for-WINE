@@ -50,14 +50,28 @@ def Disable(i):
 #Function to create the window
 def create():   
     for i in range(len(Mods)):
-        tkinter.Label(text = getName(i)).grid(row=i, sticky="nsew", column=0) #name of the mod
-        tkinter.Label(text = Mods[i], fg="grey").grid(row=i, sticky="nsew", column=1) #name of the mod folder
+        tkinter.Label(frame, text = getName(i)).grid(row=i, sticky="nsew", column=0) #name of the mod
+        tkinter.Label(frame, text = Mods[i], fg="grey").grid(row=i, sticky="nsew", column=1) #name of the mod folder
         os.chdir(Directory + str(Mods[i]))
         if os.path.isfile('addme.script') is True: #Checks if the mod is active or not
-            tkinter.Button(text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=2)
+            tkinter.Button(frame, text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=2)
         else:
-            tkinter.Button(text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2)
+            tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2)
 
+#Adds a scrollbar
+def onFrameConfigure(canvas):
+    canvas.configure(scrollregion=canvas.bbox("all"))
+
+canvas = tkinter.Canvas(mainwindow, borderwidth=0)
+frame = tkinter.Frame(canvas)
+vsb = tkinter.Scrollbar(mainwindow, orient="vertical", command=canvas.yview)
+canvas.configure(yscrollcommand=vsb.set)
+
+vsb.pack(side="right", fill="y")
+canvas.pack(side="left", fill="both", expand=True)
+canvas.create_window((4,4), window=frame, anchor="nw")
+frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))            
+            
 #Creates the window
 create()
 mainwindow.mainloop()
