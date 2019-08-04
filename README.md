@@ -3,7 +3,7 @@ An unofficial mod loader for Star Wars: Battlefront II that runs native on GNU/L
 
 It automaticly recognizes the name of the mod by its folder name.
 
-![alt text](https://raw.githubusercontent.com/Liemaeu/Battlefront-2-Mod-Loader-for-WINE/master/Screenshot1.png)
+![alt text](https://raw.githubusercontent.com/Liemaeu/Battlefront-2-Mod-Loader-for-WINE/master/Screenshot.png)
 
 What this mod loader does:
 
