@@ -27,7 +27,7 @@ Mods = list(filter(os.path.isdir, os.listdir()))
 #Window
 mainwindow = tkinter.Tk()
 mainwindow.title("SWBF2 Mod Loader")
-mainwindow.geometry("500x800")
+mainwindow.geometry("600x800")
 
 #Function to check if the name of the mod is in the ModList
 def getName(i):
