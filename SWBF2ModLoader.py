@@ -59,7 +59,7 @@ def create():
         else:
             tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2)
 
-#Adds a scrollbar
+#Adds scrollbars
 def onFrameConfigure(canvas):
     canvas.configure(scrollregion=canvas.bbox("all"))
 
@@ -67,8 +67,11 @@ canvas = tkinter.Canvas(mainwindow, borderwidth=0)
 frame = tkinter.Frame(canvas)
 vsb = tkinter.Scrollbar(mainwindow, orient="vertical", command=canvas.yview)
 canvas.configure(yscrollcommand=vsb.set)
+hsb = tkinter.Scrollbar(mainwindow, orient="horizontal", command=canvas.xview)
+canvas.configure(xscrollcommand=hsb.set)
 
 vsb.pack(side="right", fill="y")
+hsb.pack(side="bottom", fill="x")
 canvas.pack(side="left", fill="both", expand=True)
 canvas.create_window((4,4), window=frame, anchor="nw")
 frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))            
