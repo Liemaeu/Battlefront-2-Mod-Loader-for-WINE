@@ -17,7 +17,7 @@ except:
     if DefaultDirectory != None:
         Directory = DefaultDirectory
     else:
-        print("Error. You have to run this script with the path to your addon folder or set the DefaultDirectory in this script.")
+        print("Error! You have to run this script with the path to your addon folder or set the DefaultDirectory in this script.")
         exit()
 
 #Saves all mods in a list
