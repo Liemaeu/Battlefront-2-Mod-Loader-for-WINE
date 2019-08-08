@@ -30,7 +30,7 @@ Mods = list(filter(os.path.isdir, os.listdir()))
 #Window
 mainwindow = tkinter.Tk()
 mainwindow.title("SWBF2 Mod Loader")
-mainwindow.geometry("600x800")
+mainwindow.geometry( "500x" + str(mainwindow.winfo_screenheight() - 150)) #Sets the height of the window that it fits perfectly in the screen (screenheight - 150 pixels)
 
 #Function to check if the name of the mod is in the ModList
 def getName(i):
