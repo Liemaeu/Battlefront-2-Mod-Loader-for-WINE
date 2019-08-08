@@ -3,7 +3,7 @@ import sys
 try: #If the script was executed with Python 2 or if tkinter is not installed an error message will be displayed
     import tkinter
 except:
-    print("Error! You have to run this script with python3. Make sure tkinter (Ubuntu: python3-tk) is installed.")
+    print("Error! You have to run this script with python3. Make sure tkinter (e. g. Ubuntu: python3-tk) is installed.")
 
 #Set default directory
 DefaultDirectory = None
