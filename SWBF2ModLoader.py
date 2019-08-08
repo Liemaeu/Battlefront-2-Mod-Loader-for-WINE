@@ -56,8 +56,10 @@ def create():
         os.chdir(Directory + str(Mods[i]))
         if os.path.isfile('addme.script') is True: #Checks if the mod is active or not
             tkinter.Button(frame, text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=2)
-        else:
+        elif os.path.isfile('addme.script.disabled') is True:
             tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2)
+        else:
+            tkinter.Label(frame, text = "ERROR!").grid(row=i, sticky="nsew", column=2) #Displays an error message if no addme.script was found
 
 #Adds scrollbars
 def onFrameConfigure(canvas):
