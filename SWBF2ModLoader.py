@@ -31,8 +31,11 @@ Mods = list(filter(os.path.isdir, os.listdir()))
 #Window
 mainwindow = tkinter.Tk()
 mainwindow.title("SWBF2 Mod Loader")
-mainwindow.geometry( "500x" + str(mainwindow.winfo_screenheight() - 150)) #Sets the height of the window that it fits perfectly in the screen (screenheight - 150 pixels)
-
+if mainwindow.winfo_screenmmwidth() / mainwindow.winfo_screenmmheight() == 1.6: #Checks if it is a 16:10 screen, that the window height is compatible with the macOS dock
+    mainwindow.geometry( "500x" + str(mainwindow.winfo_screenheight() - 150))
+else:
+    mainwindow.geometry( "500x" + str(mainwindow.winfo_screenheight() - 100))
+    
 #Function to check if the name of the mod is in the ModList
 def getName(i):
     for a in range(len(ModList)):
