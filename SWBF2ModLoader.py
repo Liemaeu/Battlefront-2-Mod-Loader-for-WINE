@@ -58,19 +58,7 @@ def Disable(i):
     os.rename('addme.script', 'addme.script.disabled')
     tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2) #Reloads the button
 
-#Function to create the window
-def create():   
-    for i in range(len(Mods)):
-        tkinter.Label(frame, text = getName(i)).grid(row=i, sticky="nsew", column=0) #name of the mod
-        tkinter.Label(frame, text = Mods[i], fg="grey").grid(row=i, sticky="nsew", column=1) #name of the mod folder
-        os.chdir(Directory + str(Mods[i]))
-        if os.path.isfile('addme.script') is True: #Checks if the mod is active or not
-            tkinter.Button(frame, text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=2)
-        elif os.path.isfile('addme.script.disabled') is True:
-            tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2)
-        else:
-            tkinter.Label(frame, text = "ERROR!").grid(row=i, sticky="nsew", column=2) #Displays an error message if no addme.script was found
-
+    
 #Adds scrollbars
 def onFrameConfigure(canvas):
     canvas.configure(scrollregion=canvas.bbox("all"))
@@ -88,6 +76,16 @@ canvas.pack(side="left", fill="both", expand=True)
 canvas.create_window((4,4), window=frame, anchor="nw")
 frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))            
             
-#Creates the window
-create()
+
+for i in range(len(Mods)): #Creates the window content
+    tkinter.Label(frame, text = getName(i)).grid(row=i, sticky="nsew", column=0)
+    tkinter.Label(frame, text = Mods[i], fg="grey").grid(row=i, sticky="nsew", column=1)
+    os.chdir(Directory + str(Mods[i]))
+    if os.path.isfile('addme.script') is True: #Checks if the mod is activated or not
+        tkinter.Button(frame, text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=2)
+    elif os.path.isfile('addme.script.disabled') is True:
+        tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2)
+    else:
+        tkinter.Label(frame, text = "ERROR!").grid(row=i, sticky="nsew", column=2) #Displays an error of the folder is not a valid mod
+    
 mainwindow.mainloop()
