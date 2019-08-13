@@ -43,13 +43,13 @@ def getName(i):
 def Enable(i):
     os.chdir(Directory + str(Mods[i]))
     os.rename('addme.script.disabled', 'addme.script')
-    create() #Reloads the window to update the active label
+    tkinter.Button(frame, text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=2) #Reloads the button
 
 #Function to disable a mod
 def Disable(i):
     os.chdir(Directory + str(Mods[i]))
     os.rename('addme.script', 'addme.script.disabled')
-    create() #Reloads the window to update the active label
+    tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2) #Reloads the button
 
 #Function to create the window
 def create():   
