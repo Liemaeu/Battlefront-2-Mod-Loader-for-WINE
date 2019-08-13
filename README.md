@@ -33,4 +33,4 @@ You can report new mods by opening an issue here on GitHub or by sending me an e
 
 If there is an "ERROR!" label instead of a enable/disable button, then this folder is not a valid mod (it hast no addme.script/addme.script.disabled file in it).
 
-If it quits with the message "Not a valid directory!" check if the "/path/to/Star Wars Battlefront II/GameData/addon/" is correct (do not forget the quotes ""!).
+If it quits with the message "Not a valid directory!" check if the "/path/to/Star Wars Battlefront II/GameData/addon/" is a correct path to a directory (do not forget the quotes ""!).
