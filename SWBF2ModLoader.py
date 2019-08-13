@@ -23,6 +23,9 @@ except:
     else:
         print("Error! You have to run this script with the path to your addon folder or set the DefaultDirectory in this script.")
         exit()
+if not os.path.exists(os.path.dirname(Directory)): #Checks if the direcotry exists
+    print("Not a valid directory!")
+    exit()
 
 #Saves all mods in a list
 os.chdir(Directory)
