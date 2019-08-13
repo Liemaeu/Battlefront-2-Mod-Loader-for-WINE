@@ -4,6 +4,7 @@ try: #If the script was executed with Python 2 or if tkinter is not installed an
     import tkinter
 except:
     print("Error! You have to run this script with python3. Make sure tkinter (e. g. Ubuntu: python3-tk) is installed.")
+    exit()
 
 #Set default directory
 DefaultDirectory = None
