@@ -87,5 +87,7 @@ for i in range(len(Mods)): #Creates the window content
         tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2)
     else:
         tkinter.Label(frame, text = "ERROR!").grid(row=i, sticky="nsew", column=2) #Displays an error of the folder is not a valid mod
-    
+
+        
+        
 mainwindow.mainloop()
