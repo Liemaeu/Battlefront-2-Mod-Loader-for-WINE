@@ -27,7 +27,7 @@ python3 SWBF2ModLoader.py "/path/to/Star Wars Battlefront II/GameData/addon/"
 
 Alternativly you can change the value of the DefaultDirectory variable in the SWBF2ModLoader.py script from None to "/path/to/Star Wars Battlefront II/GameData/addon/". After that you can launch the mod loader with the command: python3 SWBF2ModLoader.py.
 
-To add more mod names edit the 2 dimensional arrey ModList in the SWBF2ModLoader.py script. The syntax is: ["name of folder", "name of mod"], e.g. ["BFX", "Battlefront Extreme"].
+To add more mod names edit the 2 dimensional array ModList in the SWBF2ModLoader.py script. The syntax is: ["name of folder", "name of mod"], e.g. ["BFX", "Battlefront Extreme"].
 
 You can report new mods by opening an issue here on GitHub or by sending me an email: liemaeu@gmail.com. Thank you very much for making this mod loader better!
 
