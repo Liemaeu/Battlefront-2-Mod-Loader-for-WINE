@@ -13,7 +13,7 @@ It renames the addme.script file into the mod folders to (de)activate them.
 
 Installation:
 
-Just download the SWBF2ModLoader.py.
+Just download the SWBF2ModLoader.py file.
 
 Dependencies:
 
