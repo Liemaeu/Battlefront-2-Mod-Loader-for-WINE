@@ -7,7 +7,7 @@ It **automaticly recognizes the name of the mod** by its folder name (nearly eve
 
 What this mod loader does:
 
-It renames the addme.script file in the mod folders to (de)activate them.
+It renames the addme.script file in the mod folder to (de)activate them.
 
 ---
 
