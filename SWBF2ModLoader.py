@@ -31,7 +31,7 @@ if not os.path.exists(os.path.dirname(Directory)):
 
 #Saves all mods in a list
 os.chdir(Directory)
-Mods = list(filter(os.path.isdir, os.listdir()))
+Mods = sorted(list(filter(os.path.isdir, os.listdir())))
 
 #Window
 mainwindow = tkinter.Tk()
