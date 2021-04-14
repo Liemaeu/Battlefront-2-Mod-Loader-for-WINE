@@ -1,5 +1,5 @@
 # Battlefront-2-Mod-Loader-for-WINE
-An unofficial mod loader for Star Wars: Battlefront II that runs natively on GNU/Linux, macOS and *BSD (with Python).
+An unofficial mod loader for Star Wars: Battlefront II that runs natively on GNU/Linux, macOS and *BSD.
 
 It **automaticly recognizes the name of the mod** by its folder name (nearly every mod from ModDB.com, 164 at the moment).
 
