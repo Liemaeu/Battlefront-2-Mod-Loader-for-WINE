@@ -31,9 +31,9 @@ Alternatively you can change the value of the DefaultDirectory variable in the S
 
 ---
 
-To add more mod names edit the 2 dimensional array ModList in the SWBF2ModLoader.py script. The syntax is: ["name of folder", "name of mod"], e.g. ["BFX", "Battlefront Extreme"].
+To add more mod names edit the 2 dimensional array *ModList* in the SWBF2ModLoader.py script. The syntax is: *["name of folder", "name of mod"]*, e.g. *["BFX", "Battlefront Extreme"]*.
 
-You can report new mods by opening an issue here on GitHub or by sending me an email: liemaeu@gmail.com. Thank you very much for making this mod loader better!
+You can report new mods by opening an issue here on GitHub or by sending me an email: liemaeu@gmail.com. Thank you very much!
 
 ---
 
