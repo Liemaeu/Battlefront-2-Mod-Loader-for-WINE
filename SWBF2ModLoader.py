@@ -29,10 +29,26 @@ if not os.path.exists(os.path.dirname(Directory)):
     print("Not a valid directory!")
     exit()
 
+InstalledMods = []
 
 #Saves all mods in a list
 os.chdir(Directory)
-Mods = sorted(list(filter(os.path.isdir, os.listdir())))
+Mods = list(filter(os.path.isdir, os.listdir()))
+
+#Saves installed mods to InstalledMods list
+for m in range(len(Mods)):
+    known = False
+    for i in range(len(ModList)):
+        if Mods[m] == ModList[i][0]:
+            temp = [ModList[i][1], Mods[m]]
+            InstalledMods.append(temp)
+            known = True
+    if known == False:
+        temp = ["Unknown", Mods[m]]
+        InstalledMods.append(temp)
+
+#Sorts the installed mods
+InstalledMods.sort()
 
 #Window
 mainwindow = tkinter.Tk()
@@ -48,22 +64,15 @@ else:
 def mousewheel(event, scroll):
     canvas.yview_scroll(int(scroll), "units")
 
-#Function to check if the name of the mod is in the ModList
-def getName(i):
-    for a in range(len(ModList)):
-        if Mods[i] == ModList[a][0]:
-            return ModList[a][1]
-    return "Unknown"
-
 #Function to enable a mod
 def Enable(i):
-    os.chdir(Directory + str(Mods[i]))
+    os.chdir(Directory + str(InstalledMods[i][1]))
     os.rename('addme.script.disabled', 'addme.script')
     tkinter.Button(frame, text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=2)
 
 #Function to disable a mod
 def Disable(i):
-    os.chdir(Directory + str(Mods[i]))
+    os.chdir(Directory + str(InstalledMods[i][1]))
     os.rename('addme.script', 'addme.script.disabled')
     tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2)
 
@@ -89,17 +98,18 @@ frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))
 canvas.bind_all("<Button-4>", functools.partial(mousewheel, scroll=-1))
 canvas.bind_all("<Button-5>", functools.partial(mousewheel, scroll=1))
 
-for i in range(len(Mods)): #Creates the window content
-    tkinter.Label(frame, text = getName(i)).grid(row=i, sticky="nsew", column=0)
-    tkinter.Label(frame, text = Mods[i], fg="grey").grid(row=i, sticky="nsew", column=1)
-    os.chdir(Directory + str(Mods[i]))
-    if os.path.isfile('addme.script') is True: #Checks if the mod is activated or not
+#Creates the window content
+for i in range(len(InstalledMods)):
+    tkinter.Label(frame, text = InstalledMods[i][0]).grid(row=i, sticky="nsew", column=0)
+    tkinter.Label(frame, text = InstalledMods[i][1], fg="grey").grid(row=i, sticky="nsew", column=1)
+    os.chdir(Directory + str(InstalledMods[i][1]))
+    #Checks if the mod is activated or not
+    if os.path.isfile('addme.script') is True:
         tkinter.Button(frame, text = "Disable", command = lambda a=i:Disable(a), fg="white", bg="red").grid(row=i, sticky="nsew", column=2)
     elif os.path.isfile('addme.script.disabled') is True:
         tkinter.Button(frame, text = "Enable", command = lambda a=i:Enable(a), fg="white", bg="green").grid(row=i, sticky="nsew", column=2)
+    #Displays an error if the folder is not a valid mod
     else:
-        tkinter.Label(frame, text = "ERROR!").grid(row=i, sticky="nsew", column=2) #Displays an error if the folder is not a valid mod
-
-
+        tkinter.Label(frame, text = "ERROR!").grid(row=i, sticky="nsew", column=2)
 
 mainwindow.mainloop() 
