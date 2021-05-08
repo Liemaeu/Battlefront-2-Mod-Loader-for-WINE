@@ -94,7 +94,7 @@ canvas.pack(side="left", fill="both", expand=True)
 canvas.create_window((4,4), window=frame, anchor="nw")
 frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))
 
-#adds mousewheel scrolling
+#Adds mousewheel scrolling
 canvas.bind_all("<Button-4>", functools.partial(mousewheel, scroll=-1))
 canvas.bind_all("<Button-5>", functools.partial(mousewheel, scroll=1))
 
