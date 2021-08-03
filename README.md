@@ -5,23 +5,21 @@ It **automatically recognizes the name of the mod** by its folder name (nearly e
 
 ![Screenshot](https://raw.githubusercontent.com/Liemaeu/Battlefront-2-Mod-Loader-for-WINE/master/Screenshot.png)
 
-What this mod loader does:
+## What this mod loader does
 
 It renames the addme.script file in the mod folder to (de)activate them.
 
----
-
-Installation:
+## Installation
 
 Just download the SWBF2ModLoader.py file.
 
-Dependencies:
+## Dependencies
 
 - Python3
 
 - tkinter
 
-How to run the script:
+## How to run the script
 
 `python3 SWBF2ModLoader.py "/path/to/Star Wars Battlefront II/GameData/addon/"`
 
