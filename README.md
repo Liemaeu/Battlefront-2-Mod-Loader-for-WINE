@@ -27,13 +27,13 @@ Just download the SWBF2ModLoader.py file.
 
 Alternatively you can change the value of the *DefaultDirectory* variable in the SWBF2ModLoader.py script from None to "/path/to/Star Wars Battlefront II/GameData/addon/". After that you can launch the mod loader with the command: `python3 SWBF2ModLoader.py`.
 
----
+## How to add more mods to the list
 
 To add more mod names edit the 2 dimensional list *ModList* in the SWBF2ModLoader.py script. The syntax is: *["name of folder", "name of mod"]*, e.g. *["BFX", "Battlefront Extreme"]*.
 
 You can submit new mods by opening an issue. Thank you very much!
 
----
+## ERROR! label instead of enable/disable button
 
 If there is an "ERROR!" label instead of a enable/disable button, this folder is not a valid mod (it has no addme.script/addme.script.disabled file).
 
